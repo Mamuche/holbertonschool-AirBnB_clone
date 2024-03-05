@@ -12,17 +12,22 @@ class TestFileStorage(unittest.TestCase):
 class TestMethodSave(unittest.TestCase):
     """blablabla"""
 
+    def test_save(self):
 
 class TestMethodAll(unittest.TestCase):
     """blablabla"""
 
+    def test_all(self):
 
 class TestMethodNew(unittest.TestCase):
     """blablabla"""
 
+    def test_ne(self):
+
 class TestMethodReload(unittest.TestCase):
     """blablabla"""
 
+    def test_reload(self):
 
 if __name__ == '__main__':
     unittest.main()
