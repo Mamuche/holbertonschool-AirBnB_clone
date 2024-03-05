@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 """program contains the entry point of the command interpreter"""
 import cmd
-from models.base_model import BaseModel
 import models
-
+from models.base_model import BaseModel
+from models.user import User
 
 class HBNBCommand(cmd.Cmd):
     """class for command interpreter"""
     prompt = "(hbnb) "
     __valid_classes = {
-        "BaseModel": BaseModel
+        "BaseModel": BaseModel,
+        "User": User
     }
 
     def do_quit(self, arg):
