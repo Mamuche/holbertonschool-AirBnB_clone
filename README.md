@@ -14,7 +14,6 @@ Write a command interpreter to manage your AirBnB objects.
 
 This project was released by Edem Djossou and Marion Laroche in [Holbertonschool](https://www.holbertonschool.fr/?gad_source=1&gclid=CjwKCAiAvoqsBhB9EiwA9XTWGZshq5Y0wpTRGv4wPcY4bKSsX2uqJ0Q8YIAl5CLWh98Fr5Nqb4s6VhoCDUEQAvD_BwE)'s Bordeaux. We work on the campus every day and we make a Check in every morning and a Check out every afternoon. We divided the tasks, but we work in collaboration for all the project (decisions, organisation, commits...).
 
-Our simple shell is a program that takes commands from the keyboard via the terminal, and gives them to the operating system to perform.
 
 ## **Its essential functionalities**
 
@@ -50,9 +49,6 @@ Destroy an object
 - test fil_storage
 - test save reload_model.py
 - test save reload_user
-
-
-## **Compilation**
 
 
 

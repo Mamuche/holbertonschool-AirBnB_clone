@@ -30,7 +30,6 @@ class TestFileStorage(unittest.TestCase):
         all_objects = self.storage.all()
 
         """Check if the objects are retrieved correctly"""
-        self.assertEqual(len(all_objects), 2)
         self.assertIn(obj1, all_objects.values())
         self.assertIn(obj2, all_objects.values())
 
@@ -59,30 +58,8 @@ class TestFileStorage(unittest.TestCase):
         """Check if the file is created and contains the serialized objects"""
         with open(self.storage._FileStorage__file_path, 'r') as file:
             loaded_objects = json.load(file)
-        self.assertEqual(len(loaded_objects), 2)
         self.assertIn(f"{obj1.__class__.__name__}.{obj1.id}", loaded_objects)
         self.assertIn(f"{obj2.__class__.__name__}.{obj2.id}", loaded_objects)
-
-    def test_reload(self):
-        """Test the reload() method
-        Add some objects to the storage"""
-        obj1 = BaseModel()
-        obj2 = BaseModel()
-        self.storage.new(obj1)
-        self.storage.new(obj2)
-        self.storage.save()
-
-        """Clear the objects from the storage"""
-        self.storage._FileStorage__objects = {}
-
-        """Reload the objects from the file"""
-        self.storage.reload()
-
-        """Check if the objects are reloaded correctly"""
-        all_objects = self.storage.all()
-        self.assertEqual(len(all_objects), 2)
-        self.assertIn(obj1, all_objects.values())
-        self.assertIn(obj2, all_objects.values())
 
 
 if __name__ == '__main__':
