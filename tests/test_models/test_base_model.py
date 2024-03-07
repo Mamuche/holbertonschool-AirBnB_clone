@@ -8,7 +8,8 @@ from datetime import datetime
 class TestBaseModel(unittest.TestCase):
     def test_init(self):
         """Test initialization with arguments"""
-        obj = BaseModel(id="123", created_at=datetime.now(), updated_at=datetime.now())
+        obj = BaseModel(id="123", created_at=datetime.now(),
+                        updated_at=datetime.now())
         self.assertEqual(obj.id, "123")
         self.assertIsInstance(obj.created_at, datetime)
         self.assertIsInstance(obj.updated_at, datetime)
@@ -34,7 +35,8 @@ class TestBaseModel(unittest.TestCase):
 
     def test_to_dict(self):
         """Test the to_dict method"""
-        obj = BaseModel(id="123", created_at=datetime.now(), updated_at=datetime.now())
+        obj = BaseModel(id="123", created_at=datetime.now(),
+                        updated_at=datetime.now())
         expected_dict = {
             'id': '123',
             '__class__': 'BaseModel',
@@ -42,6 +44,7 @@ class TestBaseModel(unittest.TestCase):
             'updated_at': obj.updated_at.isoformat()
         }
         self.assertDictEqual(obj.to_dict(), expected_dict)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -82,7 +82,8 @@ class HBNBCommand(cmd.Cmd):
         else:
             key = "{}.{}".format(args[0], args[1])
             all_objects = models.storage.all()
-            """Retrieves the object associated with the key from the dictionary"""
+            """Retrieves the object associated with
+            the key from the dictionary"""
             obj = all_objects.get(key)
             if obj:
                 del all_objects[key]
