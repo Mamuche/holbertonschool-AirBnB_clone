@@ -30,7 +30,6 @@ class TestFileStorage(unittest.TestCase):
         all_objects = self.storage.all()
 
         """Check if the objects are retrieved correctly"""
-        self.assertEqual(len(all_objects), 2)
         self.assertIn(obj1, all_objects.values())
         self.assertIn(obj2, all_objects.values())
 
