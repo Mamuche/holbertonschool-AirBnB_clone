@@ -5,9 +5,12 @@ from models.amenity import Amenity
 
 
 class TestAmenity(unittest.TestCase):
-    """blablabla"""
+    """Test cases for class Amenity"""
 
     def test_args(self):
+        """Test initialization of Amenity class"""
+        amenity = Amenity()
+        self.assertEqual(amenity.name, "")
 
 
 if __name__ == '__main__':

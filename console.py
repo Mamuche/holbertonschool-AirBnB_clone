@@ -63,6 +63,7 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
             return
 
+        """create a key from the arguments class name and id"""
         key = "{}.{}".format(args[0], args[1] if len(args) > 1 else "")
         if key not in models.storage.all():
             print("** no instance found **")
@@ -81,6 +82,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             key = "{}.{}".format(args[0], args[1])
             all_objects = models.storage.all()
+            """Retrieves the object associated with the key from the dictionary"""
             obj = all_objects.get(key)
             if obj:
                 del all_objects[key]
@@ -95,12 +97,15 @@ class HBNBCommand(cmd.Cmd):
         all_instances = []
 
         if not args:
+            """scans all instances in storage,
+            returns a dictionary of each instance"""
             for obj in models.storage.all().values():
                 all_instances.append(str(obj))
             print(all_instances)
         elif args[0] not in self.__valid_classes:
             print("** class doesn't exist **")
         else:
+            """scans all keys and objects in storage."""
             for key, obj in models.storage.all().items():
                 if args[0] in key:
                     all_instances.append(str(obj))

@@ -5,9 +5,13 @@ from models.city import City
 
 
 class TestCity(unittest.TestCase):
-    """blablabla"""
+    """Test cases for class City"""
 
     def test_args(self):
+        """Test initialization of City instance"""
+        city = City()
+        self.assertEqual(city.state_id, "")
+        self.assertEqual(city.name, "")
 
 
 if __name__ == '__main__':

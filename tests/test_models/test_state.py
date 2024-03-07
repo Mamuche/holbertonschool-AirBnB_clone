@@ -8,6 +8,8 @@ class TestState(unittest.TestCase):
     """blablabla"""
 
     def test_args(self):
+        state = State()
+        self.assertEqual(state.name, "")
 
 
 if __name__ == '__main__':
